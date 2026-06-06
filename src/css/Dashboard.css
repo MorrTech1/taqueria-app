@@ -1,0 +1,176 @@
+.seccion {
+margin-bottom: 30px;
+}
+
+.fila {
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+align-items:flex-end;
+
+}
+
+.input {
+
+padding: 14px 18px;
+
+border: 1px solid #ddd;
+
+border-radius: 12px;
+
+width: 240px;
+
+font-size: 18px;
+
+outline: none;
+
+box-sizing: border-box;
+
+}
+
+.input:focus {
+
+border-color: #47b74b;
+
+}
+
+.boton {
+
+background-color: #47b74b;
+
+color: white;
+
+border: none;
+
+padding: 14px 22px;
+
+border-radius: 12px;
+
+cursor: pointer;
+
+font-size: 18px;
+
+}
+
+.botonCerrar {
+
+background-color: #ff0000;
+
+color: white;
+
+border: none;
+
+padding: 14px 22px;
+
+border-radius: 12px;
+
+cursor: pointer;
+
+font-size: 18px;
+
+}
+
+.botonCerrar:hover {
+
+opacity: .9;
+
+}
+
+
+.boton:hover {
+
+opacity: .9;
+
+}
+
+.lista {
+
+margin-top: 20px;
+
+}
+
+.item {
+
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+margin-bottom: 12px;
+
+font-size: 18px;
+
+}
+
+.botonEliminar {
+
+background: red;
+
+border: none;
+
+cursor: pointer;
+
+font-size: 18px;
+
+}
+
+.tarjeta {
+
+border: 1px solid #ddd;
+
+border-radius: 12px;
+
+padding: 15px;
+
+min-width: 160px;
+
+box-sizing: border-box;
+
+}
+
+body{
+
+background:#f5f5f5;
+
+color:#111;
+
+transition:.3s;
+
+}
+
+body.dark{
+
+background:#161616;
+
+color:white;
+
+}
+
+body.dark .input{
+
+background:#222;
+
+color:white;
+
+border-color:#444;
+
+}
+
+body.dark .tarjeta{
+
+background:#222;
+
+border-color:#444;
+
+}
+
+body.dark hr{
+
+border-color:#333;
+
+}
