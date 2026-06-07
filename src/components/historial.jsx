@@ -1,6 +1,4 @@
-import HistorialCard
-from
-"./HistorialCard";
+import HistorialCard from "../components/HistorialCard";
 
 function Historial({
 
