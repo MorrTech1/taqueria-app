@@ -5,7 +5,7 @@ import ResumenCard from "../components/ResumenCard";
 import Gastos from "../components/Gastos";
 import Sueldos from "../components/Sueldos";
 import Caja from "../components/Caja";
-import Historial from "../components/Historial";
+import Historial from "../components/HistorialTEMP";
 import DashboardLayout from "../components/DashboardLayout";
 import "../css/Dashboard.css";
 
