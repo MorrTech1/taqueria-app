@@ -8,6 +8,11 @@ import Caja from "../components/Caja";
 import Historial from "../components/Historial";
 import DashboardLayout from "../components/DashboardLayout";
 import "../css/Dashboard.css";
+import {
+guardarCorte
+}
+from
+"../services/historialService";
 
 function Dashboard() {
   // GASTOS
@@ -126,7 +131,7 @@ function Dashboard() {
     Number(efectivo || 0) +
     Number(transferencia || 0);
 
-  function cerrarDia() {
+  async function cerrarDia() {
 
     const confirmar = window.confirm(
       "¿Seguro que quieres cerrar el dia? "
@@ -145,6 +150,8 @@ function Dashboard() {
       transferencia,
       ventaTotal
     };
+
+    await guardarCorte(nuevoCorte);
 
     setHistorial([
       ...historial,
