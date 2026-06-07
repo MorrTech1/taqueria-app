@@ -9,10 +9,10 @@ import Historial from "../components/Historial";
 import DashboardLayout from "../components/DashboardLayout";
 import "../css/Dashboard.css";
 import {
-guardarCorte
+guardarCorte,
+obtenerHistorial
 }
-from
-"../services/historialService";
+from "../services/historialService";
 
 function Dashboard() {
   // GASTOS
@@ -42,10 +42,11 @@ function Dashboard() {
   });
 
   // HISTORIAL
-  const [historial, setHistorial] = useState(() => {
-    const datos = localStorage.getItem("historial");
-    return datos ? JSON.parse(datos) : [];
-  });
+const [
+historial,
+setHistorial
+] =
+useState([]);
 
   const [corteSeleccionado, setCorteSeleccionado] = useState(null);
 
@@ -66,9 +67,22 @@ function Dashboard() {
     localStorage.setItem("transferencia", transferencia);
   }, [transferencia]);
 
-  useEffect(() => {
-    localStorage.setItem("historial", JSON.stringify(historial));
-  }, [historial]);
+  useEffect(()=>{
+
+async function cargar(){
+
+const datos =
+await obtenerHistorial();
+
+setHistorial(
+datos
+);
+
+}
+
+cargar();
+
+},[]);
 
   function agregarGasto() {
     if (!concepto || !monto) return;
