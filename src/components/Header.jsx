@@ -28,7 +28,7 @@ function Header() {
       </button>
      
       
-        <img src="/public/WhatsApp Image 2025-12-30 at 2.50.19 AM.png" alt="Taquería Los Güeros" style={{ width: "40px", height: "40px", marginRight: "10px" }} />
+        <img src="/public/logo.png" alt="Taquería Los Güeros" style={{ width: "40px", height: "40px", marginRight: "10px" }} />
         <h1 style={{ margin: 0, fontSize: "24px" }}>Taquería Los Güeros</h1>
       
 
