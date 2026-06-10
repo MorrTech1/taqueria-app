@@ -1,6 +1,6 @@
 function Header() {
 
-  const logo = "/public/logo.png";
+  const logo = "/logo.png";
   return (
     <div
       style={{
@@ -30,13 +30,14 @@ function Header() {
       </button>
      
       
-        <img
-src={logo}
+      <img
+src="/logo.png"
 alt="Logo"
 style={{
-width:"48px",
-height:"48px",
-borderRadius:"50%"
+width:"60px",
+height:"60px",
+borderRadius:"50%",
+objectFit:"cover"
 }}
 />
 

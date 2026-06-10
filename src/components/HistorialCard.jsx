@@ -41,7 +41,7 @@ cursor:"pointer"
 
 <hr />
 
-<h4>Gastos</h4>
+<h4>Gastos 💸</h4>
 
 {corte.gastos.map(
 (gasto,index)=>(
@@ -52,7 +52,7 @@ ${gasto.monto}
 </div>
 ))}
 
-<h4>Sueldos</h4>
+<h4>Sueldos 🧑‍🍳:</h4>
 
 {corte.sueldos.map(
 (sueldo,index)=>(
@@ -63,15 +63,18 @@ ${sueldo.monto}
 </div>
 ))}
 
-<p>
+<h4>
 Efectivo:
-${corte.efectivo}
-</p>
-
-<p>
+${corte.efectivo} 💵
+</h4>
+<h4>
+Monedas:
+${corte.monedas} 🪙
+</h4>
+<h4>
 Transferencia:
-${corte.transferencia}
-</p>
+${corte.transferencia} 💳
+</h4>
 
 </div>
 

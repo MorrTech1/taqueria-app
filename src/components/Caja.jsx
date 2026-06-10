@@ -11,6 +11,9 @@ setEfectivo,
 transferencia,
 setTransferencia,
 
+monedas,
+setMonedas,
+
 totalGastos,
 
 totalSueldos,
@@ -49,6 +52,19 @@ e.target.value
 className="input"
 
 />
+
+<input 
+type="number"
+placeholder="Monedas"
+value={monedas}
+
+onChange={(e)=>
+setMonedas(
+e.target.value
+)}
+className="input"
+/>
+
 
 <input
 
@@ -106,6 +122,12 @@ titulo="Efectivo"
 valor={efectivo||0}
 
 />
+<ResumenCard 
+emoji="🪙"
+titulo="Monedas"
+valor={monedas||0}
+/>
+
 
 <ResumenCard
 

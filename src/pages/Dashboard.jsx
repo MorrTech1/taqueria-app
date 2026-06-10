@@ -40,6 +40,9 @@ function Dashboard() {
   const [transferencia, setTransferencia] = useState(() => {
     return localStorage.getItem("transferencia") || "";
   });
+  
+  const [monedas, setMonedas] =
+  useState("");
 
   // HISTORIAL
 const [
@@ -150,7 +153,8 @@ cargar();
     totalGastos +
     totalSueldos +
     Number(efectivo || 0) +
-    Number(transferencia || 0);
+    Number(transferencia || 0) +
+    Number(monedas || 0);
 
   async function cerrarDia() {
 
@@ -166,6 +170,7 @@ fechaCorte;
       gastos,
       sueldos,
       efectivo,
+      monedas,
       transferencia,
       ventaTotal
     };
@@ -181,7 +186,7 @@ fechaCorte;
     setSueldos([]);
     setEfectivo("");
     setTransferencia("");
-
+    setMonedas("");
     alert(
 "Día guardado"
 )
@@ -274,6 +279,10 @@ efectivo={efectivo}
 
 setEfectivo={
 setEfectivo
+}
+
+monedas={monedas}
+setMonedas={setMonedas
 }
 
 transferencia={
