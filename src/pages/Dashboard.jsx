@@ -7,6 +7,7 @@ import Sueldos from "../components/Sueldos";
 import Caja from "../components/Caja";
 import Historial from "../components/Historial";
 import DashboardLayout from "../components/DashboardLayout";
+import ResumenMensual from "../components/ResumenMensual";
 import "../css/Dashboard.css";
 import {
 guardarCorte,
@@ -50,6 +51,8 @@ historial,
 setHistorial
 ] =
 useState([]);
+
+const [pantalla, setPantalla] = useState("dashboard");
 
 const [fechaCorte, setFechaCorte] =
 useState(
@@ -315,6 +318,8 @@ cerrarDia
 
      <Historial
 
+    
+
 historial={
 historial
 }
@@ -328,6 +333,7 @@ setCorteSeleccionado
 }
 
 />
+
 
     </div>
   </DashboardLayout>

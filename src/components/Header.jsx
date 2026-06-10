@@ -1,7 +1,10 @@
 import { useState } from "react";
+import ResumenMensual from "./ResumenMensual";
 
-function Header() {
+function Header({ pantalla, setPantalla }) {
 const [menuAbierto, setMenuAbierto] = useState(false);
+
+const [mostrarResumen, setMostrarResumen] = useState(false);
 
 return (
 
@@ -111,6 +114,35 @@ Taquería Los Güeros
 
 </h1>
 
+{
+
+pantalla==="resumen"
+
+&&(
+
+<button
+
+style ={{
+
+padding: "8px 16px",  
+borderRadius: "8px",
+border: "none",
+background: "#0004ee",
+color: "white",
+cursor: "pointer"}}
+
+onClick={()=>setPantalla("dashboard")}
+
+>
+
+← Inicio
+
+</button>
+
+)
+
+}
+
 
 
 {/* MENÚ */}
@@ -187,15 +219,17 @@ alert("Editar corte próximamente");
 
 <button
 
-onClick={() => {
+onClick={()=>{
 
-alert("Eliminar corte próximamente");
+setPantalla("resumen");
+
+setMenuAbierto(false);
 
 }}
 
 >
 
-🗑️ Eliminar corte
+📊 Resúmenes
 
 </button>
 
@@ -259,7 +293,31 @@ document.body.classList.toggle(
 
 </button>
 
+{
+
+mostrarResumen && (
+
+<div
+
+style={{
+
+marginTop:"20px"
+
+}}
+
+>
+
+<ResumenMensual/>
+
 </div>
+
+)
+
+}
+
+</div>
+
+
 
 );
 

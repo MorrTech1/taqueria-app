@@ -27,37 +27,41 @@ cursor:"pointer"
 }}
 >
 
-<p>
+<h3>
+
 
 📅 {
-
-(() => {
-
-const fecha =
-new Date(
-corte.fecha +
-"T12:00:00"
-);
-
-const dia =
-fecha.toLocaleDateString(
-"es-MX",
-{
-weekday:"long"
+  
+  (() => {
+    
+    const fecha =
+    new Date(
+      corte.fecha +
+      "T12:00:00"
+    );
+    
+    const dia =
+    fecha.toLocaleDateString(
+      "es-MX",
+      {
+        weekday:"long"
+      }
+    );
+    
+    return `${dia} ${corte.fecha}`;
+    
+  })()
+  
 }
-);
+  </h3>
 
-return `${dia} ${corte.fecha}`;
 
-})()
 
-}
+<h3>
 
-</p>
-
-<p>
 💰 ${corte.ventaTotal}
-</p>
+</h3>
+
 
 {abierto && (
 
