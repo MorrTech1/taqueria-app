@@ -149,6 +149,12 @@ background:#161616;
 
 color:white;
 
+
+}
+
+body.dark .botonMenu {
+background: #333;
+color: white;
 }
 
 body.dark .input{

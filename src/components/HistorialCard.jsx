@@ -27,9 +27,33 @@ cursor:"pointer"
 }}
 >
 
-<h3>
-📅 {corte.fecha}
-</h3>
+<p>
+
+📅 {
+
+(() => {
+
+const fecha =
+new Date(
+corte.fecha +
+"T12:00:00"
+);
+
+const dia =
+fecha.toLocaleDateString(
+"es-MX",
+{
+weekday:"long"
+}
+);
+
+return `${dia} ${corte.fecha}`;
+
+})()
+
+}
+
+</p>
 
 <p>
 💰 ${corte.ventaTotal}

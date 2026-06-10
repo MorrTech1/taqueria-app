@@ -224,7 +224,7 @@ padding:"12px",
 borderRadius:"10px",
 marginBottom:"20px"
 }}
-/>s
+/>
 
      <Gastos
 
