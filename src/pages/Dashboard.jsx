@@ -48,6 +48,13 @@ setHistorial
 ] =
 useState([]);
 
+const [fechaCorte, setFechaCorte] =
+useState(
+new Date()
+.toISOString()
+.split("T")[0]
+);
+
   const [corteSeleccionado, setCorteSeleccionado] = useState(null);
 
   // GUARDAR EN LOCALSTORAGE
@@ -151,10 +158,8 @@ cargar();
       "¿Seguro que quieres cerrar el dia? "
     );
 
-    if (!confirmar) return;
-    const fecha = new Date()
-      .toISOString()
-      .split("T")[0];
+    const fecha =
+fechaCorte;
 
     const nuevoCorte = {
       fecha,
@@ -192,6 +197,29 @@ cargar();
       
 
       <hr />
+
+      <h2
+style={{
+marginTop:"20px"
+}}
+>
+📅 Fecha del corte
+</h2>
+
+<input
+type="date"
+value={fechaCorte}
+onChange={(e)=>
+setFechaCorte(
+e.target.value
+)
+}
+style={{
+padding:"12px",
+borderRadius:"10px",
+marginBottom:"20px"
+}}
+/>s
 
      <Gastos
 

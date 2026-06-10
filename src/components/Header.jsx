@@ -1,4 +1,6 @@
 function Header() {
+
+  const logo = "/public/logo.png";
   return (
     <div
       style={{
@@ -28,7 +30,16 @@ function Header() {
       </button>
      
       
-        <img src="/public/logo.png" alt="Taquería Los Güeros" style={{ width: "40px", height: "40px", marginRight: "10px" }} />
+        <img
+src={logo}
+alt="Logo"
+style={{
+width:"48px",
+height:"48px",
+borderRadius:"50%"
+}}
+/>
+
         <h1 style={{ margin: 0, fontSize: "24px" }}>Taquería Los Güeros</h1>
       
 
