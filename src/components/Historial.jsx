@@ -4,6 +4,8 @@ function Historial({
 
 historial,
 
+setHistorial,
+
 corteSeleccionado,
 
 setCorteSeleccionado
@@ -42,6 +44,12 @@ corteSeleccionado
 
 setCorteSeleccionado={
 setCorteSeleccionado
+}
+
+setHistorial={setHistorial
+}
+
+historial={historial
 }
 
 />

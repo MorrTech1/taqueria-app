@@ -32,6 +32,8 @@ cargar();
 
 },[]);
 
+
+
 const meses=[
 
 ...new Set(
@@ -64,6 +66,8 @@ year:"numeric"
 
 ];
 
+
+
 const cortesFiltrados=
 
 historial.filter(
@@ -94,6 +98,8 @@ return mes===mesSeleccionado;
 
 );
 
+
+
 const ventas=
 
 cortesFiltrados.reduce(
@@ -109,6 +115,8 @@ corte.ventaTotal||0
 0
 
 );
+
+
 
 const gastos=
 
@@ -134,6 +142,8 @@ gasto.monto||0
 
 );
 
+
+
 const sueldos=
 
 (corte.sueldos||[])
@@ -152,6 +162,8 @@ sueldo.monto||0
 
 );
 
+
+
 return total+
 gastosDia+
 sueldos;
@@ -162,15 +174,48 @@ sueldos;
 
 );
 
+
+
+const inversion=
+
+cortesFiltrados.reduce(
+
+(total,corte)=>
+
+total+
+
+Number(
+corte.inversion||0
+),
+
+0
+
+);
+
+
+
 const ganancia=
-ventas-gastos;
+
+ventas
+
+-
+
+gastos
+
+-
+
+inversion;
+
+
 
 return(
 
 <div
+
 style={{
 padding:"20px"
 }}
+
 >
 
 <h2>
@@ -178,6 +223,8 @@ padding:"20px"
 📊 Resúmenes
 
 </h2>
+
+
 
 <select
 
@@ -200,6 +247,8 @@ e.target.value
 Selecciona mes
 
 </option>
+
+
 
 {
 
@@ -226,6 +275,8 @@ value={mes}
 }
 
 </select>
+
+
 
 {
 
@@ -290,6 +341,8 @@ document.body.classList.contains("dark")
 
 </h1>
 
+
+
 <h3>
 
 💰 Ventas
@@ -297,6 +350,8 @@ document.body.classList.contains("dark")
 ${ventas}
 
 </h3>
+
+
 
 <h3>
 
@@ -306,9 +361,21 @@ ${gastos}
 
 </h3>
 
+
+
 <h3>
 
-📈 Ganancia
+📦 Inversión
+
+${inversion}
+
+</h3>
+
+
+
+<h3>
+
+📈 Ganancia real
 
 ${ganancia}
 

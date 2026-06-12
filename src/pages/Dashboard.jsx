@@ -318,10 +318,12 @@ cerrarDia
 
      <Historial
 
-    
-
 historial={
 historial
+}
+
+setHistorial={
+setHistorial
 }
 
 corteSeleccionado={

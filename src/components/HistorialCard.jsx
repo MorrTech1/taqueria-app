@@ -1,7 +1,15 @@
+import {
+actualizarCorte
+}
+from
+"../services/historialService";
+
 function HistorialCard({
   corte,
   corteSeleccionado,
-  setCorteSeleccionado
+  setCorteSeleccionado,
+  setHistorial,
+  historial
 }) {
 
 const abierto =
@@ -62,6 +70,95 @@ cursor:"pointer"
 💰 ${corte.ventaTotal}
 </h3>
 
+
+<p>
+
+📦 Inversión:
+$
+
+{
+
+corte.inversion||0
+
+}
+
+</p>
+
+<button
+
+onClick={async(e)=>{
+
+e.stopPropagation();
+
+const nueva=
+
+prompt(
+
+"Inversión para mañana",
+
+corte.inversion||0
+
+);
+
+if(
+nueva===null
+)
+
+return;
+
+await actualizarCorte(
+
+corte.id,
+
+{
+
+inversion:
+
+Number(
+nueva
+)
+
+}
+
+);
+
+setHistorial(
+
+historial.map(
+
+(item)=>
+
+item.id===corte.id
+
+?
+
+{
+
+...item,
+
+inversion:
+
+Number(
+nueva
+)
+
+}
+
+:
+
+item
+
+)
+
+);
+
+}}
+
+>
+
+✏️ Agregar inversión
+
+</button>
 
 {abierto && (
 
