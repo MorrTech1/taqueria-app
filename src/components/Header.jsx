@@ -1,8 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ResumenMensual from "./ResumenMensual";
 
 function Header({ pantalla, setPantalla }) {
 const [menuAbierto, setMenuAbierto] = useState(false);
+useEffect(()=>{
+
+const modo=
+
+localStorage.getItem(
+"modoOscuro"
+);
+
+if(
+modo==="true"
+){
+
+document.body.classList.add(
+"dark"
+);
+
+}
+
+},[]);
 
 const [mostrarResumen, setMostrarResumen] = useState(false);
 
@@ -239,11 +258,16 @@ setMenuAbierto(false);
 
 onClick={() => {
 
+const activo=
+
 document.body.classList.toggle(
 
 "dark"
 
 );
+
+localStorage.setItem("modoOscuro",
+    activo);
 
 }}
 
@@ -279,11 +303,16 @@ cursor: "pointer"
 
 onClick={() => {
 
+const activo=
+
 document.body.classList.toggle(
 
 "dark"
 
 );
+
+localStorage.setItem("modoOscuro",
+    activo);
 
 }}
 

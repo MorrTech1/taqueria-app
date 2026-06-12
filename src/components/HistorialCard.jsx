@@ -84,7 +84,15 @@ corte.inversion||0
 
 </p>
 
-<button
+<button style={{
+marginTop:"10px",
+padding:"8px 12px",
+border:"none",
+borderRadius:"8px",
+backgroundColor:"#47b74b",
+color:"#fff",
+cursor:"pointer"
+}}
 
 onClick={async(e)=>{
 
