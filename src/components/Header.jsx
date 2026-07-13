@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import ResumenMensual from "./ResumenMensual";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase";
 
 function Header({ pantalla, setPantalla }) {
 const [menuAbierto, setMenuAbierto] = useState(false);
@@ -274,6 +276,26 @@ localStorage.setItem("modoOscuro",
 >
 
 🌙 Tema
+
+</button>
+
+<button
+
+onClick={async () => {
+
+  const confirmar = window.confirm(
+    "¿Seguro que deseas cerrar sesión?"
+  );
+
+  if (!confirmar) return;
+
+  await signOut(auth);
+
+}}
+
+>
+
+🚪 Cerrar sesión
 
 </button>
 
