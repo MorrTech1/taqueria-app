@@ -4,7 +4,7 @@ import ResumenMensual from "./components/ResumenMensual";
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/firebase";
-import login from "./auth/login";
+import Login from "./auth/Login";
 
 function App() {
 
