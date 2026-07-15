@@ -38,7 +38,7 @@ function Login({ onLogin }) {
         }}
       >
 
-        <h2>🔐 Iniciar sesión! </h2>
+        <h2>🔐 Iniciar sesión</h2>
 
         <input
           type="email"
